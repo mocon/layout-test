@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// Styles
+import './App.css'
+
+// Components
+import { MenuProvider } from './providers'
+import { Nav, Header, Main, Item } from './components'
 
 function App() {
+  const exampleItems = []
+
+  for (let i = 0; i < 40; i++) exampleItems.push(i)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MenuProvider>
+      <Nav />
+      <Main>
+        <Header />
+        <ul className='list'>
+          {exampleItems.map((item, index) => (
+            <Item key={item} index={index} />
+          ))}
+        </ul>
+      </Main>
+    </MenuProvider>
+  )
 }
 
-export default App;
+export default App
