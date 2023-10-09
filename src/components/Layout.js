@@ -5,7 +5,7 @@ import { useMenu } from '../providers'
 export const Logo = () => (
   <div className='logo'>
     <a href='/'>
-      <img src='/logo192.png' alt='Logo' />
+      <img src='/layout-test/logo192.png' alt='Logo' />
     </a>
   </div>
 )
@@ -15,10 +15,10 @@ export const Nav = () => {
   const { isOpen, setIsOpen } = useMenu()
 
   const links = [
-    { href: '/', text: 'Home' },
-    { href: '/live', text: 'Live' },
-    { href: '/bets', text: 'Bets' },
-    { href: '/settings', text: 'Settings' },
+    { href: '/layout-test', text: 'Home' },
+    { href: '/layout-test/live', text: 'Live' },
+    { href: '/layout-test/bets', text: 'Bets' },
+    { href: '/layout-test/settings', text: 'Settings' },
   ]
 
   return (
