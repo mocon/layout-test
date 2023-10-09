@@ -1,7 +1,12 @@
-export const Item = ({ index }) => (
-  <li className='item'>
-    <a href='/layout-test'>
+import { useModal } from '../providers'
+
+export const Item = ({ index }) => {
+  const { setIsOpen } = useModal()
+
+  return (
+    <li className='item'>
       <p>Item {index + 1}</p>
-    </a>
-  </li>
-)
+      <button onClick={() => setIsOpen(true)}>Open modal</button>
+    </li>
+  )
+}
